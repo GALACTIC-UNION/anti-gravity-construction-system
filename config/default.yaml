@@ -1,0 +1,47 @@
+# Anti-Gravity Construction System (AGCS) — Default Configuration
+# GALACTIC-UNION / ASTRAL-GUARDIAN Domain
+
+system:
+  name: "Anti-Gravity Construction System (AGCS)"
+  version: "1.0.0"
+  environment: "production"
+  log_level: "INFO"
+
+
+levitation:
+  max_payload_kg: 1.0e9
+  max_altitude_m: 100000
+  altitude_precision_m: 0.01
+  hover_stability_mm: 1.0
+
+positioning:
+  placement_accuracy_cm: 0.5
+  max_velocity_m_s: 10.0
+  deceleration_profile: "S_curve"
+
+choreography:
+  max_simultaneous_objects: 256
+  collision_avoidance: true
+  clearance_margin_m: 2.0
+  update_rate_hz: 100
+
+safety:
+  structural_stress_limit_pa: 1.0e8
+  emergency_descent_rate_m_s: 0.5
+  abort_on_field_variance_pct: 5.0
+  redundant_field_generators: 3
+
+
+api:
+  rest:
+    host: "0.0.0.0"
+    port: 8080
+  auth:
+    jwt_expiry_minutes: 60
+
+monitoring:
+  metrics_interval_s: 10
+  alert_channels:
+    - "astral_guardian_core"
+    - "galactic_union_council"
+    - "nexus_prime"
